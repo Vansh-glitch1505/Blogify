@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gradient-start: #4361ee;
+            --gradient-end: #3a0ca3;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+        
+        .gradient-background {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding-bottom: 4rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .navbar-brand svg {
+            color: var(--accent-color);
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .publish-para {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .create-para {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            text-align: center;
+            opacity: 0.9;
+        }
+        
+        .carousel {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-item img {
+            object-fit: cover;
+            height: 400px;
+            width: 100%;
+        }
+        
+        .btn-orange {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn-orange:hover {
+            background-color: #d91a6d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.6);
+        }
+        
+        .btn-orange:active {
+            transform: translateY(1px);
+        }
+        
+        .money, .memory {
+            padding: 5rem 0;
+        }
+        
+        .money {
+            background-color: #f8f9fa;
+        }
+        
+        .memory {
+            background-color: white;
+        }
+        
+        .display-5 {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .lead {
+            font-size: 1.2rem;
+            color: #495057;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .publish-para {
+                font-size: 2rem;
+            }
+            
+            .create-para {
+                font-size: 1.2rem;
+            }
+            
+            .carousel-item img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header" class="gradient-background">
+        <div class="container">
+            <div>
+                <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-secondary">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-brilliance me-2" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7"/>
+                    </svg>
+                        <span class="fs-4" style="color: black;">Blogify</span>
+                    </a>
+            
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+                        <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+                    </ul>
+                </header>
+            </div>
+            
+            <div class="text-center py-5">
+                <h1 class="publish-para">
+                    Publish Your Passions Your Way
+                </h1>
+                <p class="create-para">
+                    Create a unique and beautiful blog easily
+                </p>
+            </div>
+            
+            <div id="blogCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/blogKaPhoto.jpeg" class="d-block w-100" alt="Blogging">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/FirstSlide.webp" class="d-block w-100" alt="Workspace">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/try.jpeg" class="d-block w-100" alt="Ideas">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <div class="text-center mt-4">
+                <form action="/create-blog" method="get">
+                    <button class="btn btn-orange btn-lg px-5 py-3" type="submit">
+                        Create a Blog <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </form>
+                <form action="/see-blog" method="get">
+                  <button class="btn btn-orange btn-lg px-5 py-3 mt-4" type="submit">
+                    See past Blogs <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="money" id="features">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="/gpt.jpeg" class="d-block mx-lg-auto img-fluid rounded-4 shadow" alt="Earn Money" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-4">Create an Impact On Yourself</h1>
+                    <p class="lead mb-4">This has to be one of the easiest ways where you can store your memories safely and create an impact</p>
+                    <p class="mb-4"></p>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                        <span>Share stories of how your passion helped someone</span>
+                    </div>
+                    <div class="d-flex align-items-center my-2">
+                        <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                        <span>Encourage others to take action through your content</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                        <span>Promote social causes aligned with your interests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="memory">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="/save.jpeg" class="d-block mx-lg-auto img-fluid rounded-4 shadow" alt="Memories" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-4">Preserve Your Precious Memories</h1>
+                    <p class="lead mb-4">Save the moments that matter. BeBlogger lets you safely store thousands of posts, thoughts, and memories with our reliable cloud storage.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 h-100">
+                                <i class="fas fa-images text-primary mb-2 fs-3"></i>
+                                <h5>Unlimited Storage</h5>
+                                <p class="mb-0">Store unlimited memories and thoughts with your posts.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 h-100">
+                                <i class="fas fa-lock text-primary mb-2 fs-3"></i>
+                                <h5>Security</h5>
+                                <p class="mb-0">No Data will be Lost. Keeping your content safe!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Blogify</h5>
+                    <p>The easiest way to share your thoughts with the world. Start your blogging journey today.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="footer-links">Home</a></li>
+                        <li class="mb-2"><a href="#features" class="footer-links">Features</a></li>
+                        <li class="mb-2"><a href="#contact" class="footer-links">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4" id="contact">
+                    <h5 class="mb-3">Contact Us With</h5>
+                    <div class="d-flex">
+                        <a href="https://www.instagram.com/vansh_rotkar/" class="social-icon me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" class="social-icon me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://in.linkedin.com/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2025 Blogify. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
