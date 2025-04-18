@@ -1,90 +1,93 @@
+/* Color Variables - Enhanced */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3a0ca3;
+  --accent-color: #4a6cf7; /* New for form buttons */
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --card-bg: #ffffff;
+  --text-color: #495057;
+  --success-color: #85BB65;
+  --danger-color: #dc3545;
+  --border-color: #e0e2e7;
+}
+
+/* Base Styles */
+body {
+  background-color: #f5f7fb;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Background Styles */
 .gradient-background {
   background: linear-gradient(300deg, #00C9FF, #92FE9D);
-
-    background-size: 180% 180%;
-    animation: gradient-animation 18s ease infinite;
-  }
-  
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-.btn-orange {
-    background-color: orange;
-    border-color: orange;
-    color: white;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
 }
 
-.btn-orange:hover {
-    background-color: darkorange;
-    border-color: darkorange;
+.money {
+  background-color: var(--success-color);
+  padding: 5rem 0;
 }
 
-.publish-para {
-    
-    font-size: 2.5rem; /* Make the text larger */
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+.memory {
+  background-color: var(--danger-color);
+  padding: 5rem 0;
 }
-.create-para{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* Animation */
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.custom-sizee{
-    width: 50%; /* Adjust the width as needed */
-    height: auto;
-    display: block; /* Makes it behave like a block element */
-    margin-left: auto;
-    margin-right: auto;
-}
-.custom-size{
-    width: 50%; /* Adjust the width as needed */
-    height: 450px;
-    display: block; /* Makes it behave like a block element */
-    margin-left: auto;
-    margin-right: auto;
-}
-.money{
-    background-color: #85BB65;
-}
-.memory{
-    background-color:red;
-}
+
+/* Typography */
+.publish-para,
 .choose-para {
-    
-  font-size: 2.5rem; /* Make the text larger */
+  font-size: 2.5rem;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-}
-.smaller-title{
-  font-size: 24px !important;
-}
-.btn-spacing button{
-  margin-top: 100px;
-}
-.blog-title {
-  font-family: 'Georgia', 'Times New Roman', serif; 
-  font-size: 2.5rem;
-  font-weight: bold;                                
-  color: #333333; 
-  text-align: center; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-  margin-top: 20px; 
-  margin-bottom: 20px; 
-  padding: 10px; 
-  border-bottom: 2px solid #007BFF; 
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
+.create-para {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.blog-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  padding: 10px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.smaller-title {
+  font-size: 24px !important;
+}
+
+.blog-content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Card Styles - Enhanced */
 .card {
   width: 30rem;
   border: 1px solid #ddd;
@@ -94,61 +97,201 @@
   background-color: #fff;
 }
 
-.card-body {
-  padding: 10px;
-}
-
-
-.blog-content{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-  letter-spacing: 2px; 
-}
-.blog{
-  height: 35px;
-		width: 100vw;
-		padding: 0 5px;
-}
-
-.btn-outline-primary {
-  margin-top: 150px;
-  margin-left: 100px;
-  border-radius: 50%; 
-  width: 60px; 
-  height: 60px;
-  padding: 0; 
-  text-align: center;
-  font-size: 30px;
-  line-height: 40px;
-}
-
-
 .blog-card {
-  margin-bottom: 20px; /* Space between cards */
-  border: 1px solid #e0e0e0; /* Light border for cards */
-  border-radius: 10px; /* Rounded corners */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  height: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.blog-title {
-  font-size: 1.5rem; /* Larger title */
-  font-weight: bold; /* Bold title */
-  margin-bottom: 10px; /* Space below title */
+.card-body {
+  padding: 1.5rem;
 }
 
-.blog-content {
-  font-size: 1rem; /* Normal text size */
-  color: #555; /* Slightly darker text color */
+/* Form Styles - New */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.form-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.form-card-header {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 20px;
+  border-bottom: none;
+}
+
+.form-card-header h3 {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+/* Button Styles - Enhanced */
+.btn-orange {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+  margin: 30px 0;
+  transition: all 0.2s;
+}
+
+.btn-orange:hover {
+  background-color: darkorange;
+  border-color: darkorange;
+}
+
+.btn-submit {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+  color: white;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #3a5ce4;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
 }
 
 .create-button {
-  margin-top: 30px; /* Space above the button */
-  padding: 10px 20px; /* Button padding */
-  font-size: 1.1rem; /* Larger button text */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.create-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Delete Icon */
+.delete-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px; /* Changed from right to left */
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc3545;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.blog-card:hover .delete-icon {
+  opacity: 1;
+}
+
+.delete-icon:hover {
+  background: var(--danger-color);
+  color: white;
+}
+
+/* Layout Styles */
+.container {
+  max-width: 1200px;
+  padding-bottom: 3rem;
+}
+
+.blog {
+  height: 35px;
+  width: 100vw;
+  padding: 0 5px;
+}
+
+/* Image Styles */
+.custom-sizee,
+.custom-size {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-sizee { height: auto; }
+.custom-size { height: 450px; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publish-para,
+  .choose-para {
+    font-size: 2rem;
+  }
+  
+  .create-para {
+    font-size: 1.2rem;
+  }
+  
+  .card, .form-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .btn-outline-primary {
+    margin: 50px auto;
+  }
 }
