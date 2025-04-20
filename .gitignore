@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/client/node_modules
+/server/node_modules
+
+# build
+/dist
+/build
+
+# environment variables
+.env
+
+# logs
+*.log
+
+# misc
+.DS_Store
+.vscode
+.idea
