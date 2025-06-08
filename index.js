@@ -7,7 +7,7 @@
 
   const app = express();
   const port = 3000;
-  const dbPassword = process.env.DB_PASSWORD;
+  const dbPassword = "Vansh@1505";
 
 
   const db = new pg.Client({
