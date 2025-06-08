@@ -37,3 +37,30 @@ Node.js
 Express.js
 
 PostgreSQL for data persistence
+
+##1. Installation
+```bash
+git clone https://github.com/your-username/blogify.git
+cd blogify
+npm install
+```
+
+##2. Setup
+Create a .env file based on .env.example and add your database credentials and any secret keys.
+
+Run the database migrations (or manually create tables)
+
+```bash
+# example
+psql -d your_db -f schema.sql
+```
+
+#3. Start the server
+```bash
+npm start
+```
+
+
+
+⭐️ Show your support If you like this project, consider giving it a ⭐️ on GitHub!
+
