@@ -8,7 +8,7 @@
 /build
 
 # environment variables
-.env
+*.env
 
 # logs
 *.log
